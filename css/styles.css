@@ -287,6 +287,8 @@ body {
         float: left;
         width: 100%;
         margin-top: 0;
+        -webkit-box-shadow: none;
+        padding: 0;
     }
     .tempo-tab1 {
         position: relative;
@@ -311,5 +313,16 @@ body {
     }
     .tempo-tab2, .tempo-tab3{
         display: none;
+    }
+}
+@media(max-width:216px){
+    .tempo-tab1 {
+        width: 210px;
+    }
+    .env{
+        display: none;
+    }
+    #icone{
+        width: 50px;
     }
 }
