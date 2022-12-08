@@ -1,0 +1,315 @@
+.card.sombra {
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.593), 0 10px 20px -2px rgba(0, 0, 0, 0.553) !important;
+    color: #ffffff !important;
+}
+
+.tempMax {
+    color: red;
+}
+
+.tempMin {
+    color: #0077ff;
+}
+
+
+.situacao {
+    color: #373737 !important;
+}
+
+.quadro-clima {
+    background-color: #00000000;
+    display: flex;
+    flex-direction: row;
+    padding: 14px 16px;
+    min-width: 230px;
+    height: 180px;
+}
+
+.titulo {
+    float: left;
+    width: 100%;
+    height: 20px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.tempo-hoje {
+    position: relative;
+    float: left;
+    width: 32.5%;
+    padding-right: 2.5%;
+    margin-top: 20px;
+}
+
+.tempo-amanha,
+.tempo-depoisDeAmanha {
+    position: relative;
+    float: left;
+    width: 27.5%;
+    padding: 0 2.5%;
+    text-align: center;
+    color: #767e87;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+html,
+body {
+    font-family: "Caladea";
+    font-size: 14px;
+}
+
+::selection {
+    background: #f0f0f0;
+}
+
+.env {
+    float: left;
+    width: 100%;
+}
+
+.pos-tempo-home {
+    position: relative;
+    float: left;
+    width: 95%;
+    padding: 15px 2.5%;
+    margin-top: 30px;
+    border-radius: 4px;
+    font-family: 'Montserrat';
+    background: rgba(254, 254, 254);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.pos-tempo-home:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    top: 3px;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 5px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 5px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 2px 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cidade-tempo {
+    float: left;
+    width: 50%;
+    font-size: 14px;
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.tempo-data {
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-size: 11px;
+}
+
+.tempo-data b {
+    font-weight: 600;
+}
+
+.tempo-data a {
+    color: #3a3a3a;
+}
+
+.tempo-tab1 {
+    position: relative;
+    float: left;
+    width: 32.5%;
+    padding-right: 2.5%;
+}
+.tempo-tab1 .cond-atual {
+    float: left;
+}
+
+.tempo-tab1 .cond-atual span:nth-of-type(1) {
+    float: left;
+    font-size: 51px;
+}
+
+.tempo-tab1 .cond-atual span:nth-of-type(2) {
+    float: left;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 100;
+    color: #8b8778;
+}
+
+.tempo-tab1 .min-max {
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.tempo-tab1 .min-max span:nth-of-type(1) {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    color: #494949;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.tempo-tab1 .info-extra {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.tempo-tab1 .info-extra div {
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.tempo-tab1 .info-extra div span {
+    color: #767e87;
+}
+
+.tempo-tab1 .info-extra div:first-child {
+    margin-left: 0;
+}
+
+.tempo-tab1 .info-extra div span:nth-of-type(1) {
+    position: relative;
+    font-size: 16px;
+    top: 2px;
+}
+
+.tempo-tab1 .info-extra div span:nth-of-type(2) {
+    margin-left: 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tempo-tab1 .info-extra div span:nth-of-type(3) {
+    display: block;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.tempo-tab1 .info-extra div .icon-vento {
+    display: inline-block;
+    animation-name: girando;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: girando;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.tempo-tab1 p {
+    display: block;
+    margin-top: 8px;
+}
+
+.tempo-tab1 p b {
+    font-weight: 600;
+}
+
+.tempo-tab1 p span:nth-of-type(1) {
+    float: left;
+    font-size: 13px;
+    font-weight: 300;
+    color: #494949;
+}
+
+.tempo-tab1 p span:nth-of-type(2) {
+    float: left;
+    font-size: 13px;
+    font-weight: 300;
+    color: #494949;
+}
+.textoSituacao{
+    display: flex;
+    width: 100%;
+    float: left;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.tempo-tab2,
+.tempo-tab3 {
+    position: relative;
+    float: left;
+    width: 32.5%;
+    padding-left:2.5%;
+    text-align: center;
+}
+.icons-tempo{
+    float: left;
+}
+.min-max{
+    float: left;
+    margin-top: 7px;
+    margin-left: 40px;
+}
+
+
+.tempo-tab2 .cond-futuro .tt-cond-fut,
+.tempo-tab3 .cond-futuro .tt-cond-fut {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.tempo-tab2 .cond-futuro .desc-futuro,
+.tempo-tab3 .cond-futuro .desc-futuro {
+    float: left;
+    width: 100%;
+}
+@media(max-width: 815px){
+    .pos-tempo-home:before {
+        display: none;
+    }
+    .pos-tempo-home {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-top: 0;
+    }
+    .tempo-tab1 {
+        position: relative;
+        float: none;
+        display: flex;
+        width: 238px;
+        padding: 0;
+        flex-wrap: wrap;
+        box-shadow: inset 0 0 0 1px rgb(0 0 0 / 5%);
+    }
+    .pos-tempo-home{
+        overflow: hidden;
+    }
+    .tempo-tab2, .tempo-tab3{
+        margin-top: 10px;
+        float: none;
+        display: flex;
+        width: 238px;
+        padding: 0;
+        flex-direction: column;
+        box-shadow: inset 0 0 0 1px rgb(0 0 0 / 5%);
+    }
+    .tempo-tab2, .tempo-tab3{
+        display: none;
+    }
+}

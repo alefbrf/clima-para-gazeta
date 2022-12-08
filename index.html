@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <!--  <section class="vh-100">
+        <div class="container h-100">
+      
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+      
+              <div class="card sombra" style="color: #4B515D; border-radius: 35px;">
+                <div class="card-body p-4">
+      
+                  <div class="d-flex">
+                    <h6 class="flex-grow-1" id="cidadeTempo"></h6>
+                    <h6 id="tempo"></h6>
+                  </div>
+      
+                  <div class="d-flex flex-column text-center mt-5 mb-4">
+                    <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;" id="temperatura"></h6>
+                    <span class="small" style="color: #868B94" id="situacao"></span>
+                  </div>
+      
+                  <div class="d-flex align-items-center">
+                    <div class="flex-grow-1" style="font-size: 1rem;">
+                      <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1" id="tempMax">
+                        </span></div>
+                      <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1" id="tempMin"></span>
+                      </div>
+                      <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1" id="chuvaAgora"></span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="" width="100px" id="icone">
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      </section>
+      <section class="quadro-clima">
+        <div class="titulo">
+        </div>
+        <div class="tempo-hoje">
+            
+        </div>
+        <div class="tempo-amanha">
+
+        </div>
+        <div class="tempo-depoisDeAmanha">
+
+        </div>
+      </section>-->
+
+  <div class="pos-tempo-home">
+    <div class="env">
+      <div class="cidade-tempo"><span id="cidadeTempo"></span> <span id="tempo"></span></div>
+    </div>
+    <div class="tempo-tab1">
+      <div class="cond-atual"> <span class="icons-tempo"><img src="" width="80px" id="icone"></span> <span id="temperatura"></span> 
+      </div>
+      <div class="min-max"> 
+        <p> <span>Mín. <b id="tempMin" class="tempMin"></b></span><br> <span >Máx. <b id="tempMax" class="tempMax"></b></span> </p>
+      </div>
+      <div class="textoSituacao"><span id="situacao" class="situacao"></span> <span class="chuvaAgora" id="chuvaAgora"></span></div>
+    </div>
+    <div class="tempo-tab2">
+      <div class="cond-futuro"> 
+        <span class="tt-cond-fut" id="data-amanha"></span>
+          <span class="icons-tempo">
+            <img src="" width="63.5px" id="iconeAmanha"></span>
+            <div class="min-max">
+              <span>Mín. <b id="tempMinAmanha" class="tempMin"></b></span><br> 
+              <span>Máx. <b id="tempMaxAmanha" class="tempMax"></b></span></div>
+              <span class="desc-futuro textoSituacao"><span id="situacaoAmanha" class="situacao"></span> 
+              <span class="chuvaAmanha" id="chuvaAmanha"></span>
+            </span>
+      </div>
+    </div>
+    <div class="tempo-tab3">
+      <div class="cond-futuro"> 
+        <span class="tt-cond-fut" id="data-depois"></span>
+          <span class="icons-tempo">
+            <img src="" width="63.5px" id="iconeDepoisAmanha"></span>
+            <div class="min-max">
+              <span>Mín. <b id="tempMinDepoisAmanha" class="tempMin"></b></span><br> 
+              <span>Máx. <b id="tempMaxDepoisAmanha" class="tempMax"></b></span></div>
+              <span class="desc-futuro textoSituacao"><span id="situacaoDepoisAmanha" class="situacao"></span> 
+              <span class="chuvaAmanha" id="chuvaDepoisAmanha"></span>
+            </span>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="./js/main.js"></script>
+
+</html>
