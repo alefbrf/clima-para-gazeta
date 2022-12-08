@@ -316,11 +316,20 @@ body {
     }
 }
 @media(max-width:216px){
+    #cidadeTempo,#tempo{
+        display: none;
+    }
+    .cidade-tempo::before{
+        content: "Oliveira-MG ";
+    }
+    #situacao{
+        display: none;
+    }
+    #chuvaAgora::before{
+        content: "Probabilidade de ";
+    }
     .tempo-tab1 {
         width: 210px;
-    }
-    .env{
-        display: none;
     }
     #icone{
         width: 50px;
