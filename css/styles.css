@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+
+
 .card.sombra {
     box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.593), 0 10px 20px -2px rgba(0, 0, 0, 0.553) !important;
     color: #ffffff !important;
@@ -59,7 +62,7 @@
 
 html,
 body {
-    font-family: "Caladea";
+    font-family: 'Barlow', sans-serif !important;
     font-size: 14px;
 }
 
@@ -79,7 +82,6 @@ body {
     padding: 15px 2.5%;
     margin-top: 30px;
     border-radius: 4px;
-    font-family: 'Montserrat';
     background: rgba(254, 254, 254);
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
     -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
