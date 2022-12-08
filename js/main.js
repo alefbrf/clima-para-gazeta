@@ -19,7 +19,8 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		let regiao = response.location.region;
 		let situacao = response.current.condition.text;
 		let icones = response.current.condition.icon;
-		let icone = icones.substring(34);
+		console.log(icones.slice(icones.length - 8))
+		let icone = icones.slice(icones.length - 8);
 		let tempMax = (response.forecast.forecastday[0].day.maxtemp_c * 1).toFixed(0) + "°C";
 		let tempMin = (response.forecast.forecastday[0].day.mintemp_c * 1).toFixed(0) + "°C";
 		let hora = new Date(horario).getHours();
@@ -28,14 +29,16 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		let tempMinAmanha = (response.forecast.forecastday[1].day.mintemp_c * 1).toFixed(0) + "°C";
 		let situacaoAmanha = response.forecast.forecastday[1].day.condition.text;
 		let chuvaAmanha = "Chuva: " + response.forecast.forecastday[1].day.daily_chance_of_rain + "%";
-		let iconeAmanha = (response.forecast.forecastday[1].day.condition.icon).substring(34);
-		let iconeDepoisAmanha = (response.forecast.forecastday[2].day.condition.icon).substring(34);
+		let iconeAmanha = (response.forecast.forecastday[1].day.condition.icon).slice(icones.length - 8);
+		let iconeDepoisAmanha = (response.forecast.forecastday[2].day.condition.icon).slice(icones.length - 8);
 		let tempMaxDepoisAmanha = (response.forecast.forecastday[2].day.maxtemp_c * 1).toFixed(0) + "°C";
 		let tempMinDepoisAmanha = (response.forecast.forecastday[2].day.mintemp_c * 1).toFixed(0) + "°C";
 		let situacaoDepoisAmanha = response.forecast.forecastday[2].day.condition.text;
 		let chuvaDepoisAmanha = "Chuva: " + response.forecast.forecastday[2].day.daily_chance_of_rain + "%";
 		let dataAmanha = moment(response.forecast.forecastday[1].date).format('DD/MM/YYYY');
 		let dataDepoisAmanha = moment(response.forecast.forecastday[2].date).format('DD/MM/YYYY');
+		let diaOUnoite;
+		
 		//let fundoDia = "linear-gradient(0deg, #48b0ff 0%, #0FBBEE 52%, #63e8ff 98%)";
 		//let fundoNoite = "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,5,85,1) 52%, rgba(9,9,121,1) 98%)"; 
 
@@ -43,7 +46,8 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		document.getElementById("temperatura").innerHTML = temperatura + "°C";
 		document.getElementById("cidadeTempo").innerHTML = `${cidade} - MG ${dataHoje}` ;
 		document.getElementById("situacao").innerHTML = situacao;
-		document.getElementById("icone").src = `//cdn.weatherapi.com/weather/128x128/${icone}`;
+		response.current.is_day == 1 ? diaOUnoite = "day" : diaOUnoite = "night"
+		document.getElementById("icone").src = `//cdn.weatherapi.com/weather/128x128/${diaOUnoite}${icone}`;
 		document.getElementById("tempMax").innerHTML = tempMax;
 		document.getElementById("tempMin").innerHTML = tempMin;
 		document.getElementById("tempMaxAmanha").innerHTML = tempMaxAmanha;
@@ -51,8 +55,8 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		document.getElementById("chuvaAgora").innerHTML = chanceChuvaAgora;
 		document.getElementById("situacaoAmanha").innerHTML = situacaoAmanha;
 		document.getElementById("chuvaAmanha").innerHTML = chuvaAmanha;
-		document.getElementById("iconeAmanha").src = `//cdn.weatherapi.com/weather/128x128/${iconeAmanha}`;
-		document.getElementById("iconeDepoisAmanha").src = `//cdn.weatherapi.com/weather/128x128/${iconeDepoisAmanha}`;
+		document.getElementById("iconeAmanha").src = `//cdn.weatherapi.com/weather/128x128/${diaOUnoite}${iconeAmanha}`;
+		document.getElementById("iconeDepoisAmanha").src = `//cdn.weatherapi.com/weather/128x128/${diaOUnoite}${iconeDepoisAmanha}`;
 		document.getElementById("tempMaxDepoisAmanha").innerHTML = tempMaxDepoisAmanha;
 		document.getElementById("tempMinDepoisAmanha").innerHTML = tempMinDepoisAmanha;
 		document.getElementById("situacaoDepoisAmanha").innerHTML = situacaoDepoisAmanha;
