@@ -323,6 +323,7 @@ body {
     }
     .cidade-tempo::before{
         content: "Oliveira-MG ";
+        margin-left: 11px;
     }
     #situacao{
         display: none;
