@@ -19,11 +19,10 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		let regiao = response.location.region;
 		let situacao = response.current.condition.text;
 		let icones = response.current.condition.icon;
-		console.log(icones.slice(icones.length - 8))
 		let icone = icones.slice(icones.length - 8);
 		let tempMax = (response.forecast.forecastday[0].day.maxtemp_c * 1).toFixed(0) + "°C";
 		let tempMin = (response.forecast.forecastday[0].day.mintemp_c * 1).toFixed(0) + "°C";
-		let hora = new Date(horario).getHours();
+		let hora = new Date(response.location.localtime).getHours();
 		let chanceChuvaAgora = "Chuva: " + response.forecast.forecastday[0].hour[hora].chance_of_rain + "%";
 		let tempMaxAmanha = (response.forecast.forecastday[1].day.maxtemp_c * 1).toFixed(0) + "°C";
 		let tempMinAmanha = (response.forecast.forecastday[1].day.mintemp_c * 1).toFixed(0) + "°C";
@@ -63,6 +62,5 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		document.getElementById("chuvaDepoisAmanha").innerHTML = chuvaDepoisAmanha;
 		document.getElementById("data-amanha").innerHTML = dataAmanha;
 		document.getElementById("data-depois").innerHTML = dataDepoisAmanha;
-		//response.current.is_day == 1 ? document.querySelector(".sombra").style.background = fundoDia : document.querySelector(".sombra").style.background = fundoNoite;
 	})
 
