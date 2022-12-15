@@ -280,6 +280,24 @@ body {
     float: left;
     width: 100%;
 }
+.tempo-tab2:before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 0;
+    height: 50%;
+    border-left: 2px solid #cecece;
+    transform: rotate(-15deg);
+}
+.tempo-tab2:after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 50%;
+    border-left: 2px solid #cecece;
+    transform: rotate(-15deg);
+}
 @media(max-width: 815px){
     .pos-tempo-home:before {
         display: none;
