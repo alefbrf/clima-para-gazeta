@@ -9,8 +9,6 @@
 fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-44.8278&days=3&lang=pt', options)
 	.then(response => response.json())
 	.then(response => {
-		//console.log(response);
-		
 		let dataHoje = moment(response.location.localtime).format('DD/MM/YYYY');
 		let horario = moment(response.location.localtime).format('DD/MM/YYYY hh:mm A');
 		let horaAgr = moment(response.location.localtime).format('H:mm');
@@ -28,8 +26,8 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		let tempMinAmanha = (response.forecast.forecastday[1].day.mintemp_c * 1).toFixed(0) + "°C";
 		let situacaoAmanha = response.forecast.forecastday[1].day.condition.text;
 		let chuvaAmanha = "Chuva: " + response.forecast.forecastday[1].day.daily_chance_of_rain + "%";
-		let iconeAmanha = (response.forecast.forecastday[1].day.condition.icon).slice(icones.length - 8);
-		let iconeDepoisAmanha = (response.forecast.forecastday[2].day.condition.icon).slice(icones.length - 8);
+		let iconeAmanha = (response.forecast.forecastday[1].day.condition.icon).slice(response.forecast.forecastday[1].day.condition.icon.length - 8);
+		let iconeDepoisAmanha = (response.forecast.forecastday[2].day.condition.icon).slice(response.forecast.forecastday[2].day.condition.icon.length - 8);
 		let tempMaxDepoisAmanha = (response.forecast.forecastday[2].day.maxtemp_c * 1).toFixed(0) + "°C";
 		let tempMinDepoisAmanha = (response.forecast.forecastday[2].day.mintemp_c * 1).toFixed(0) + "°C";
 		let situacaoDepoisAmanha = response.forecast.forecastday[2].day.condition.text;
@@ -37,9 +35,7 @@ fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=%20-20.6971%2C%20-4
 		let dataAmanha = moment(response.forecast.forecastday[1].date).format('DD/MM/YYYY');
 		let dataDepoisAmanha = moment(response.forecast.forecastday[2].date).format('DD/MM/YYYY');
 		let diaOUnoite;
-		
-		//let fundoDia = "linear-gradient(0deg, #48b0ff 0%, #0FBBEE 52%, #63e8ff 98%)";
-		//let fundoNoite = "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,5,85,1) 52%, rgba(9,9,121,1) 98%)"; 
+
 
 		document.getElementById("tempo").innerHTML = horaAgr;
 		document.getElementById("temperatura").innerHTML = temperatura + "°C";
